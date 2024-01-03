@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-text = "ASCII"
-print(text.lower())
+for char in range(97, 123):
+    print("{:c}".format(char), end='')
