@@ -1,55 +1,56 @@
 #include "lists.h"
 
-int is_palindrome(listint_t **head)
+listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *slowly = *head;
-	listint_t *faster = *head;
-	listint_t *st_half = *head;
-	listint_t *sec_half = NULL;
+	listint_t *nd = *head, *next, *prev = NULL;
 
-	int is_palind = 1;
-
-	while (faster != NULL && faster->next != NULL)
+	while (nd)
 	{
-		faster = faster->next->next;
-		slowly = slowly->next;
+		next = nd->next;
+		nd->next = prev;
+		prev = nd;
+		nd = next;
 	}
 
-	if (faster != NULL)
-	{
-		slowly = slowly->next;
-	}
-
-	sec_half = reverse_list(&slowly);
-
-	while (sec_half != NULL)
-	{
-		if (st_half->n != sec_half->n)
-		{
-			is_palind = 0;
-			break;
-		}
-		st_half = st_half->next;
-		sec_half = sec_half->next;
-	}
-
-	return is_palind;
+	*head = prev;
+	return (*head);
 }
 
-listint_t *reverse_list(listint_t **head)
+int is_palindrome(listint_t **head)
 {
-	listint_t *prv = NULL;
-	listint_t *current = *head;
-	listint_t *next;
+	listint_t *tm, *rev, *mid;
+	size_t size = 0, l;
 
-	while (current != NULL)
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
+	tm = *head;
+	while (tm)
 	{
-		next = current->next;
-		current->next = prv;
-		prv = current;
-		current = next;
+		size++;
+		tm = tm->next;
 	}
 
-	*head = prv; 
-	return (prv);  
+	tm = *head;
+	for (l = 0; l < (size / 2) - 1; l++)
+		tm = tm->next;
+
+	if ((size % 2) == 0 && tm->n != tm->next->n)
+		return (0);
+
+	tm = tm->next->next;
+	rev = reverse_listint(&tm);
+	mid = rev;
+
+	tm = *head;
+	while (rev)
+	{
+		if (tm->n != rev->n)
+			return (0);
+		tm = tm->next;
+		rev = rev->next;
+	}
+	reverse_listint(&mid);
+
+	return (1);
 }
