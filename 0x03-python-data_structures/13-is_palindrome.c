@@ -40,14 +40,14 @@ listint_t *reverse_list(listint_t **head)
 {
 	listint_t *prv = NULL;
 	listint_t *current = *head;
-	listint_t *nxt;
+	listint_t *next;
 
 	while (current != NULL)
 	{
-		nxt = current->nxt;
-		current->nxt = prv;
+		next = current->next;
+		current->next = prv;
 		prv = current;
-		current = nxt;
+		current = next;
 	}
 
 	*head = prv; 
