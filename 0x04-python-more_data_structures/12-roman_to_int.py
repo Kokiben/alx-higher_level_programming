@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
     for a in range(len(roman_string)):
         if a == len(roman_string) - 1:
             n += roman_diccti[roman_string[a]]
-        elif roman_diccti[roman_string[a]] >= roman_dicc[roman_string[a + 1]]:
+        elif roman_diccti[roman_string[a]] >= roman_diccti[roman_string[a + 1]]:
             n += roman_diccti[roman_string[a]]
         else:
             n -= roman_diccti[roman_string[a]]
