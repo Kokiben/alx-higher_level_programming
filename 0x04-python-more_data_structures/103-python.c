@@ -60,7 +60,7 @@ void print_python_list(PyObject *p)
 	for (l = 0; l < size; l++)
 	{
 		objc = ((PyListObject *)p)->ob_item[l];
-		printf("Element %ld: %s\n", l, ((obj)->ob_type)->tp_name);
+		printf("Element %ld: %s\n", l, ((objc)->ob_type)->tp_name);
 		if (PyBytes_Check(objc))
 			print_python_bytes(objc);
 	}
