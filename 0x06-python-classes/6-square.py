@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-"""Define a class Square"""
+"""Class definition for a Square"""
 
 
 class Square:
-    """Initialize the Square class"""
+    """Initialize a new Square with a specified size"""
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
@@ -14,25 +14,25 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, value):
-        if type(value) is not int:
+    def size(self, val):
+        if type(val) is not int:
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif val < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        self.__size = val
 
     @property
     def position(self):
         return self.__position
 
     @position.setter
-    def position(self, value):
-        if (not isinstance(value, tuple) or
-                len(value) != 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
+    def position(self, val):
+        if (not isinstance(val, tuple) or
+                len(val) != 2 or
+                not all(isinstance(n, int) for n in val) or
+                not all(n >= 0 for n in val)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        self.__position = val
 
     def area(self):
         return self.__size * self.__size
@@ -41,8 +41,8 @@ class Square:
         if self.__size == 0:
             print()
             return
-        [print() for i in range(self.__position[1])]
-        for i in range(self.__size):
-            [print(" ", end="") for k in range(self.__position[0])]
+        [print() for a in range(self.__position[1])]
+        for a in range(self.__size):
+            [print(" ", end="") for i in range(self.__position[0])]
             [print("#", end="") for j in range(self.__size)]
             print()
