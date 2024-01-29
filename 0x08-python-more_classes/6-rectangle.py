@@ -83,9 +83,9 @@ class Rectangle:
         me_rect += ", " + str(self.__height) + ")"
         return (me_rect)
 
-     def __del__(self):
+    def __del__(self):
         """
-            Modify the special method __del__
+            __del__
         """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
