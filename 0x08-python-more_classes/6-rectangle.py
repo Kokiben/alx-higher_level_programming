@@ -83,5 +83,4 @@ class Rectangle:
         return (me_rect)
 
     def __del__(self):
-        type(self).number_of_instances -= 1
-        print("Bye rectangle...")
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
