@@ -1,29 +1,32 @@
 #!/usr/bin/python3
 """
-    Class definition for a Rectangle
+    define a class Rectangle
 """
 
 
 class Rectangle:
     """
-        Initialze the rectangle a specified width and height
-        square
+        Initialze the rectangle class with width and
+        height fields
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
         """
-            Retrieve value of width square
+            Get the value of the width field
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-            Modify value of width square
+            Set the value of the width field
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -34,14 +37,14 @@ class Rectangle:
     @property
     def height(self):
         """
-            Retrieve value of height square
+            Get the value of the height field
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-            Modify value of height square
+            Set the value of the height field
         """
         if type(value) != int:
             raise TypeError("height must be an integer")
@@ -51,13 +54,13 @@ class Rectangle:
 
     def area(self):
         """
-            Retrieve area width multiplied by height
+            Get the area width * height
         """
         return self.__width * self.__height
 
     def perimeter(self):
         """
-            Retrieve perimeter width Plus height
+            Get the perimeter width(2) + height(2)
         """
         if self.__width == 0 or self.__height == 0:
             return 0
@@ -65,22 +68,27 @@ class Rectangle:
 
     def __str__(self):
         """
-            __str__
+            Modify the special method __str__
         """
-        me_rect = ""
+        my_print = ""
         if self.__height == 0 or self.__width == 0:
-            return me_rect
-        for a in range(self.__height):
-            for k in range(self.__width):
-                me_rect += '#'
-            if a < self.__height - 1:
-                me_rect += '\n'
-        return me_rect
+            return my_print
+        for i in range(self.__height):
+            for j in range(self.__width):
+                my_print += '#'
+            if i < self.__height - 1:
+                my_print += '\n'
+        return my_print
 
     def __repr__(self):
-        me_rect = "Rectangle(" + str(self.__width)
-        me_rect += ", " + str(self.__height) + ")"
-        return (me_rect)
+        """
+            Modify the special method __repr__
+        """
+        return "Rectangle(" + str(self.__width) + ', ' + str(self.__height)+')'
 
     def __del__(self):
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        """
+            Modify the special method __del__
+        """
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1
