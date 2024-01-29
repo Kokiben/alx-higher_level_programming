@@ -84,5 +84,8 @@ class Rectangle:
         return (me_rect)
 
      def __del__(self):
-        """Print a msg"""
+        """
+           __del__
+        """
+        
         print("Bye rectangle...")
