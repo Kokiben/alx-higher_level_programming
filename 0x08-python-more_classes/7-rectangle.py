@@ -8,14 +8,19 @@ class Rectangle:
     """
         Initialze rectangle a specified with width and
         height square
+
+    Attributes:
+        number_of_instances (int): Number of Rectangle instances.
+        print_symbol (any): Symbol used for str representation.
     """
+
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
