@@ -83,7 +83,8 @@ class Rectangle:
         me_rect += ", " + str(self.__height) + ")"
         return (me_rect)
 
-    def __del__(self):
-        """Print a message for every deletion of a Rectangle."""
-        type(self).number_of_instances -= 1
-        print("Bye rectangle...")
+    def __repr__(self):
+        """
+            Modify the special method __repr__
+        """
+        return "Rectangle(" + str(self.__width) + ', ' + str(self.__height)+')'
