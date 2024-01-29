@@ -84,8 +84,5 @@ class Rectangle:
         return (me_rect)
 
     def __del__(self):
-        """
-            __del__
-        """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
