@@ -6,7 +6,8 @@
 
 class Rectangle:
     """
-        Initialize a new Rectangle with a specified width and height
+        Initialze the rectangle a specified width and height
+        square
     """
     def __init__(self, width=0, height=0):
         self.__width = width
@@ -22,7 +23,7 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """
-            modify value of width square
+            Modify value of width square
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -40,7 +41,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """
-            modify value of height square
+            Modify value of height square
         """
         if type(value) != int:
             raise TypeError("height must be an integer")
@@ -49,29 +50,35 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        
+        """
+            Retrieve area width multiplied by height
+        """
         return self.__width * self.__height
 
     def perimeter(self):
-        
+        """
+            Retrieve perimeter width Plus height
+        """
         if self.__width == 0 or self.__height == 0:
             return 0
         return self.__width * 2 + self.__height * 2
 
     def __str__(self):
-        
-        my_recta = ""
+        """
+            __str__
+        """
+        me_rect = ""
         if self.__height == 0 or self.__width == 0:
-            return my_recta
-        for k in range(self.__height):
-            for l in range(self.__width):
-                my_recta += '#'
-            if k < self.__height - 1:
-                my_recta += '\n'
-        return (my_recta)
+            return me_rect
+        for a in range(self.__height):
+            for k in range(self.__width):
+                me_rect += '#'
+            if a < self.__height - 1:
+                me_rect += '\n'
+        return me_rect
 
     def __repr__(self):
-        
-        my_recta = "Rectangle(" + str(self.__width)
-        my_recta += ", " + str(self.__height) + ")"
-        return (my_recta)
+        """Return str"""
+        me_rect = "Rectangle(" + str(self.__width)
+        me_rect += ", " + str(self.__height) + ")"
+        return (me_rect)
