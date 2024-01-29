@@ -78,14 +78,15 @@ class Rectangle:
         return me_rect
 
     def __repr__(self):
-        """Return str"""
+        """
+            __repr__
+        """
         me_rect = "Rectangle(" + str(self.__width)
         me_rect += ", " + str(self.__height) + ")"
         return (me_rect)
 
      def __del__(self):
         """
-           __del__
+            __del__
         """
-        
         print("Bye rectangle...")
