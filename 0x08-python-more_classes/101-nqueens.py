@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard.
-Program that solves the N queens problem.
+nqueens backtracking program to print the coordinates of n queens
+on an nxn grid such that they are all in non-attacking positions
 """
 
 
 from sys import argv
 
 if __name__ == "__main__":
-    b = []
+    a = []
     if len(argv) != 2:
         print("Usage: nqueens N")
         exit(1)
@@ -21,42 +21,42 @@ if __name__ == "__main__":
         exit(1)
 
     # initialize the answer list
-    for l in range(n):
-        b.append([l, None])
+    for i in range(n):
+        a.append([i, None])
 
-    def already_exists(u):
-        """check that b queen does not already exist in that u value"""
-        for w in range(n):
-            if u == b[w][1]:
+    def already_exists(y):
+        """check that a queen does not already exist in that y value"""
+        for x in range(n):
+            if y == a[x][1]:
                 return True
         return False
 
-    def reject(w, u):
+    def reject(x, y):
         """determines whether or not to reject the solution"""
-        if (already_exists(u)):
+        if (already_exists(y)):
             return False
-        l = 0
-        while (l < w):
-            if abs(b[l][1] - u) == abs(l - w):
+        i = 0
+        while (i < x):
+            if abs(a[i][1] - y) == abs(i - x):
                 return False
-            l += 1
+            i += 1
         return True
 
-    def clear_b(w):
+    def clear_a(x):
         """clears the answers from the point of failure on"""
-        for l in range(w, n):
-            b[l][1] = None
+        for i in range(x, n):
+            a[i][1] = None
 
-    def nqueens(w):
+    def nqueens(x):
         """recursive backtracking function to find the solution"""
-        for u in range(n):
-            clear_b(w)
-            if reject(w, u):
-                b[w][1] = u
-                if (w == n - 1):  # accepts the solution
-                    print(b)
+        for y in range(n):
+            clear_a(x)
+            if reject(x, y):
+                a[x][1] = y
+                if (x == n - 1):  # accepts the solution
+                    print(a)
                 else:
-                    nqueens(w + 1)  # moves on to next w value to continue
+                    nqueens(x + 1)  # moves on to next x value to continue
 
-    # w = 0
+    # start the recursive process at x = 0
     nqueens(0)
