@@ -25,7 +25,7 @@ if __name__ == "__main__":
         b.append([l, None])
 
     def already_exists(u):
-        """check that a queen does not already exist in that u value"""
+        """check that b queen does not already exist in that u value"""
         for w in range(n):
             if u == b[w][1]:
                 return True
