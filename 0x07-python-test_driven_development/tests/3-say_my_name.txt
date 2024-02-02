@@ -44,8 +44,8 @@ Verify for wrong type as last name:
 Verify for normal use:
 	 >>> say_my_name("kaout", "benna")
 	 My name is kaout benna
-	 >>> say_my_name("You know nothing", "John Snow")
-	 My name is You know nothing John Snow
+	 >>> say_my_name("You are best", "Bob Smith")
+	 My name is You are best Bob Smith
 
 Verify for one arg:
 	 >>> say_my_name("kaout")
