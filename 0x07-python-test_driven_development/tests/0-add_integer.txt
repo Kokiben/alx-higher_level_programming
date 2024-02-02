@@ -55,7 +55,7 @@ Verify for passed inf:
 	 >>> add_integer(1, float('inf'))
 	 Traceback (most recent call last):
 	 ...
-	 OverflowError: can't conver float infinity to int
+	 OverflowError: cannot convert float infinity to integer
 
 Verify super long int:
 	 >>> add_integer(999999999999999999999999999999, 1)
