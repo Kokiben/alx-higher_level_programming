@@ -33,31 +33,31 @@ Verify addition over multiple values:
 	 >>> [add_integer(e, e ** 2) for e in range(6)]
 	 [0, 2, 6, 12, 20, 30]
 
-Checking float with int:
-	 >>> add_integer(2.1, 4)
-	 6
+Verify float with int:
+	 >>> add_integer(2.8, 6)
+	 8
 
-Checking int with float:
-	 >>> add_integer(5, 7.8)
-	 12
+Verify int with float:
+	 >>> add_integer(6, 7.3)
+	 13
 
-Checking both float:
-	 >>> add_integer(2.45, 3.1)
-	 5
+Verify add two float:
+	 >>> add_integer(3.45, 4.1)
+	 7
 
-Checking for passed NaN:
+Verify for passed NaN:
 	 >>> add_integer(1, float('nan'))
 	 Traceback (most recent call last):
 	 ...
 	 ValueError: cannot convert float NaN to integer
 
-Checking for passed inf:
+Verify for passed inf:
 	 >>> add_integer(1, float('inf'))
 	 Traceback (most recent call last):
 	 ...
 	 OverflowError: cannot convert float infinity to integer
 
-Checking super long int:
+Verify super long int:
 	 >>> add_integer(999999999999999999999999999999, 1)
 	 1000000000000000000000000000000
 
