@@ -8,13 +8,13 @@ Importing the function from the module:
 	>>> add_integer = __import__("0-add_integer").add_integer
 
 Verify for module docstring:
-	 >>> m = __import__("0-add_integer").__doc__
-	 >>> len(m) > 1
+	 >>> n = __import__("0-add_integer").__doc__
+	 >>> len(n) > 1
 	 True
 
-Checking for function docstring:
-	 >>> f = __import__("0-add_integer").add_integer.__doc__
-         >>> len(f) > 1
+Verify for function docstring:
+	 >>> j = __import__("0-add_integer").add_integer.__doc__
+         >>> len(j) > 1
          True
 
 Checking regular addition:
