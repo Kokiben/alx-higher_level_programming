@@ -101,10 +101,10 @@ verify 1 argument:
 	 >>> add_integer(1)
 	 Traceback (most recent call last):
          ...
-	 TypeError: add_integer() missing 1 required arg: 'a'
+	 TypeError: add_integer() missing 1 required positional argument: 'b'
 
 verify more than two arguments:
 	 >>> add_integer(2, 3, 4)
          Traceback (most recent call last):
          ...
-         TypeError: add_integer() takes 2 args but 3 were give
+         TypeError: add_integer() takes 2 positional arguments but 3 were given
