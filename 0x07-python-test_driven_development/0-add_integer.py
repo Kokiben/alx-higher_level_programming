@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Crafts a function to sum up integers, ensuring type consistency by converting inputs when needed..
+Defines an integer addition function..
 
 The 0-add_integer module.
 """
