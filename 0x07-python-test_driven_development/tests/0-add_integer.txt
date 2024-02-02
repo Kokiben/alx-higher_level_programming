@@ -58,8 +58,8 @@ Verify for passed inf:
 	 OverflowError: can't convert float to int
 
 Verify long long int:
-	 >>> add_integer(888888888888888, 2)
-	 8.88888889E14
+	 >>> add_integer(999999999999999999999999999999, 1)
+	 1000000000000000000000000000000
 
 Verify non-int with number:
 	 >>> add_integer([2], 3)
@@ -101,7 +101,7 @@ Verify one argument:
 	 >>> add_integer(2)
 	 Traceback (most recent call last):
          ...
-	 TypeError: add_integer() missing 1 required  argt: 'a'
+	 TypeError: add_integer() missing 1 required  argt: 'b'
 
 Verify more than two arguments:
 	 >>> add_integer(2, 3, 4)
