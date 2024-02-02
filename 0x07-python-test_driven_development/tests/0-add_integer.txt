@@ -62,13 +62,13 @@ Verify long long int:
 	 1000000000000000000000000000000
 
 Verify non-int with number:
-	 >>> add_integer([2], 3)
+	 >>> add_integer([1], 2)
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: a must be an integer
 
 Verify number with non-int:
-	 >>> add_integer(4, "1")
+	 >>> add_integer(3, "2")
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: b must be an integer
@@ -80,13 +80,13 @@ Verify non-int with non-int:
          TypeError: a must be an integer
 
 Verify bool with int:
-	 >>> add_integer(True, 2)
+	 >>> add_integer(True, 1)
 	 Traceback (most recent call last):
          ...
          TypeError: a must be an integer
 
 Verify int with bool:
-	 >>> add_integer(1, False)
+	 >>> add_integer(0, False)
          Traceback (most recent call last):
          ...
          TypeError: b must be an integer
@@ -98,13 +98,13 @@ Verify no arguments:
 	 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
 
 Verify one argument:
-	 >>> add_integer(2)
+	 >>> add_integer(1)
 	 Traceback (most recent call last):
          ...
 	 TypeError: add_integer() missing 1 required positional argument: 'b'
 
 Verify more than two arguments:
-	 >>> add_integer(2, 3, 4)
+	 >>> add_integer(1, 2, 3)
          Traceback (most recent call last):
          ...
          TypeError: add_integer() takes 2 positional arguments but 3 were given
