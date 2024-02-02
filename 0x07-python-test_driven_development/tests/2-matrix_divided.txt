@@ -60,10 +60,10 @@ Integers and floats can be combined.
     >>> print(matrix_divided(matrix, 3))
     [[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
 
-Invalid Matrices
+improper Matrices
 ==============
 
-The parameter ``matrix`` must be a list of lists consisting of either ints or
+The variable ``matrix`` must be a list of lists consisting of either integers or
 floats. If ``matrix`` is not a list, a TypeError is raised.
 
 ::
@@ -80,7 +80,7 @@ floats. If ``matrix`` is not a list, a TypeError is raised.
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Note that an empty list will raise the TypeError.
+Please be aware that an empty list will raise the TypeError.
 
 ::
 
@@ -89,7 +89,7 @@ Note that an empty list will raise the TypeError.
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-But an empty list of lists will succeed.
+However, an empty list of lists will meet the criteria.
 
 ::
 
@@ -97,7 +97,7 @@ But an empty list of lists will succeed.
     >>> print(matrix_divided(matrix, 3))
     [[]]
 
-An identical TypeError is raised if ``matrix`` is not specifically a list of
+The same  TypeError is raised if ``matrix`` is not precisely a list of
 lists.
 
 ::
@@ -107,8 +107,8 @@ lists.
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-The same TypeError is raised yet again if any elements in ``matrix`` are
-neither ints nor floats.
+A similar TypeError is raised once more any elements in ``matrix`` are
+not integers or floats.
 
 ::
 
@@ -121,8 +121,8 @@ neither ints nor floats.
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
-Finally, all the rows in ``matrix`` must be the same size. If any rows are
-of different sizes, a new TypeError is raised.
+Concluded, all rows in ``matrix`` must be the same size. If any rows are
+of unequal sizes, a new TypeError is raised.
 
 ::
 
