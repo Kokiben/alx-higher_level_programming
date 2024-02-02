@@ -95,7 +95,7 @@ verify no argumentS:
 	 >>> add_integer()
 	 Traceback (most recent call last):
 	 ...
-	 TypeError: add_integer() missing 2 required args: 'a' and 'b'
+	 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
 
 verify 1 argument:
 	 >>> add_integer(1)
