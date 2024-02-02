@@ -134,10 +134,10 @@ of different sizes, a new TypeError is raised.
     Traceback (most recent call last):
     TypeError: Each row of the matrix must have the same size
 
-Invalid Divisors
+improper Divisors
 ================
 
-The parameter ``div`` must be either an int or float. Otherwise, a TypeError
+The variable ``div`` must be either an int or float. Otherwise, a TypeError
 is raised.
 
 ::
@@ -156,10 +156,10 @@ is raised.
     Traceback (most recent call last):
     TypeError: div must be a number
 
-``div`` must also be non-zero. Otherwise, a zeroDivError is raised.
+``div`` must also be non-zero. Otherwise, a ZeroDivisionError is raised.
 
 ::
 
     >>> print(matrix_divided(matrix, 0))
     Traceback (most recent call last):
-    zeroDivError: division by zero
+    ZeroDivisionError: division by zero
