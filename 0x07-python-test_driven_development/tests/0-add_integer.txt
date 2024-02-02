@@ -1,10 +1,10 @@
-The ``0-add_integer`` module
+Utilize ``0-add_integer`` module
 ======================
 
 Using ``add_integer``
 -------------------
 
-Importing function from module:
+Retrieve function from module:
 	>>> add_integer = __import__("0-add_integer").add_integer
 
 Verify for module docstring:
@@ -95,16 +95,16 @@ Verify no arguments:
 	 >>> add_integer()
 	 Traceback (most recent call last):
 	 ...
-	 TypeError: add_integer() missing 2 required args: 'a' and 'b'
+	 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
 
 Verify one argument:
 	 >>> add_integer(2)
 	 Traceback (most recent call last):
          ...
-	 TypeError: add_integer() missing 1 required  argt: 'b'
+	 TypeError: add_integer() missing 1 required positional argument: 'b'
 
 Verify more than two arguments:
 	 >>> add_integer(2, 3, 4)
          Traceback (most recent call last):
          ...
-         TypeError: add_integer() takes two arguments but three were give
+         TypeError: add_integer() takes 2 positional arguments but 3 were given
