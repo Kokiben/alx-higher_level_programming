@@ -1,7 +1,7 @@
-The ``0-add_integer`` module
+Utilize``0-add_integer`` module
 ======================
 
-Using ``add_integer``
+Usage ``add_integer``
 -------------------
 
 Importing the function from the module:
@@ -30,8 +30,8 @@ Verify negative with positive:
 	 4
 
 Verify addition over multiple values:
-	 >>> [add_integer(e, e ** 2) for e in range(6)]
-	 [0, 2, 6, 12, 20, 30]
+	 >>> [add_integer(e, e ** 2) for e in range(5)]
+	 [0, 2, 6, 12, 20]
 
 Verify float with int:
 	 >>> add_integer(2.8, 6)
@@ -46,65 +46,65 @@ Verify add two float:
 	 7
 
 Verify for passed NaN:
-	 >>> add_integer(1, float('nan'))
+	 >>> add_integer(2, float('nan'))
 	 Traceback (most recent call last):
 	 ...
 	 ValueError: cannot convert float NaN to integer
 
 Verify for passed inf:
-	 >>> add_integer(1, float('inf'))
+	 >>> add_integer(2, float('inf'))
 	 Traceback (most recent call last):
 	 ...
 	 OverflowError: cannot convert float infinity to integer
 
-Verify super long int:
+Verify long long int:
 	 >>> add_integer(999999999999999999999999999999, 1)
 	 1000000000000000000000000000000
 
 verify non-number with number:
-	 >>> add_integer([1], 2)
+	 >>> add_integer([2], 3)
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: a must be an integer
 
 verify number with non-number:
-	 >>> add_integer(3, "2")
+	 >>> add_integer(2, "1")
 	 Traceback (most recent call last):
 	 ...
 	 TypeError: b must be an integer
 
 verify non-number with non-number:
-	 >>> add_integer((2,), {"key": "value"})
+	 >>> add_integer((1,), {"key": "value"})
          Traceback (most recent call last):
          ...
          TypeError: a must be an integer
 
 verify bool with number:
-	 >>> add_integer(True, 1)
+	 >>> add_integer(True, 2)
 	 Traceback (most recent call last):
          ...
          TypeError: a must be an integer
 
 verify number with bool:
-	 >>> add_integer(0, False)
+	 >>> add_integer(1, False)
          Traceback (most recent call last):
          ...
          TypeError: b must be an integer
 
-verify no args:
+verify no argumentS:
 	 >>> add_integer()
 	 Traceback (most recent call last):
 	 ...
-	 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+	 TypeError: add_integer() missing 2 required args: 'a' and 'b'
 
-verify one arg:
+verify 1 argument:
 	 >>> add_integer(1)
 	 Traceback (most recent call last):
          ...
-	 TypeError: add_integer() missing 1 required positional argument: 'b'
+	 TypeError: add_integer() missing 1 required arg: 'a'
 
-verify more than 2 args:
-	 >>> add_integer(1, 2, 3)
+verify more than two arguments:
+	 >>> add_integer(2, 3, 4)
          Traceback (most recent call last):
          ...
-         TypeError: add_integer() takes 2 positional arguments but 3 were given
+         TypeError: add_integer() takes 2 args but 3 were give
