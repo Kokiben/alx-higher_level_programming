@@ -65,7 +65,7 @@ class TestMaxInteger(unittest.TestCase):
         """Test  a non-integer type in list"""
         sti = [1, 2, "Hello", 4, 5]
         with self.assertRaises(TypeError):
-            max_integer(string)
+            max_integer(sti)
 
 if __name__ == "__main__":
     unittest.main()
