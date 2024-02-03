@@ -43,8 +43,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_positive_beginning(self):
         """Test all positive with max at beginning"""
-        c = [200, 10, 8, 36, 14, 50]
-        self.assertEqual(max_integer(c), 200)
+        c = [300, 10, 8, 38, 16, 40]
+        self.assertEqual(max_integer(c), 300)
 
     def test_one_negative(self):
         """Test list with one negative number"""
