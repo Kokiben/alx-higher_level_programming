@@ -7,7 +7,7 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
     """unittest for max_integer"""
-    def test_module_docstring(self):
+    def testmod_docstring(self):
         """test module docsting"""
         n = __import__('6-max_integer').__doc__
         self.assertTrue(len(n) > 1)
