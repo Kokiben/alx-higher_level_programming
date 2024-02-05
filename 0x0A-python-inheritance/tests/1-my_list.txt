@@ -133,57 +133,57 @@ Situation 10: non-numeric types
 
 -------------------------------------------
 
-Situation 11: non-integer numeric types
+Situation 11: numeric types excluding integers
 
 >>> my_list = MyList()
->>> my_list.append(1.1)
->>> my_list.append(2.2)
->>> my_list.append(3.3)
+>>> my_list.append(4.4)
+>>> my_list.append(5.5)
+>>> my_list.append(6.6)
 >>> my_list.print_sorted()
-[1.1, 2.2, 3.3]
+[4.4, 5.5, 6.6]
 >>>
 
 -------------------------------------------
 
-Situation 12: large numbers
+Situation 12: numbers with considerable magnitude
 
 >>> my_list = MyList()
->>> my_list.append(1000000)
->>> my_list.append(2000000)
->>> my_list.append(3000000)
+>>> my_list.append(4000000)
+>>> my_list.append(5000000)
+>>> my_list.append(6000000)
 >>> my_list.print_sorted()
-[1000000, 2000000, 3000000]
+[4000000, 5000000, 6000000]
 >>>
 
 -------------------------------------------
 
-Situation 13: negative and positive numbers
+Situation 13: numbers including positive and negative
 
 >>> my_list = MyList()
->>> my_list.append(-1)
->>> my_list.append(1)
+>>> my_list.append(-2)
+>>> my_list.append(2)
 >>> my_list.print_sorted()
-[-1, 1]
+[-2, 2]
 >>>
 
 -------------------------------------------
 
-Situation 14: zero and positive numbers
+Situation 14: numbers including zero and positive
 
 >>> my_list = MyList()
 >>> my_list.append(0)
->>> my_list.append(1)
+>>> my_list.append(2)
 >>> my_list.print_sorted()
-[0, 1]
+[0, 2]
 >>>
 
 -------------------------------------------
 
-Situation 15: zero and negative numbers
+Situation 15: numbers including zero and negative
 
 >>> my_list = MyList()
 >>> my_list.append(0)
->>> my_list.append(-1)
+>>> my_list.append(-2)
 >>> my_list.print_sorted()
-[-1, 0]
+[-2, 0]
 >>>
