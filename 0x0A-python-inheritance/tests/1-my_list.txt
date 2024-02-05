@@ -7,7 +7,7 @@ Situation 0: import
 >>>
 -------------------------------------------
 
-Situation 1: common case
+Situation 1: common situation
 
 >>> my_list = MyList()
 >>> my_list.append(1)
@@ -25,7 +25,7 @@ Situation 1: common case
 
 -------------------------------------------
 
-Situation 2: not defined object
+Situation 2: undefined object
 
 >>> MyList = __import__('1-my_list').MyList
 >>> my_list2.print_sorted()
@@ -36,53 +36,53 @@ NameError: name 'my_list2' is not defined
 
 -------------------------------------------
 
-Situation 3: passed a list
+Situation 3: provided a list as an argument
 
->>> a = [1, 9, 4]
->>> my_list = MyList(a)
+>>> k = [7, 8, 9]
+>>> my_list = MyList(k)
 >>> my_list.print_sorted()
-[1, 4, 9]
+[7, 9, 8]
 >>>
 
 -------------------------------------------
 
-Situation 4: empty list
+Situation 4: list with no elements
 
->>> a = []
->>> my_list = MyList(a)
+>>> k = []
+>>> my_list = MyList(k)
 >>> my_list.print_sorted()
 []
 >>>
 
 -------------------------------------------
 
-Situation 5: unique number
+Situation 5: distnict value
 
 >>> my_list = MyList()
->>> my_list.append(1)
+>>> my_list.append(2)
 >>> my_list.print_sorted()
-[1]
+[2]
 >>> print(my_list)
-[1]
+[2]
 >>>
 
 -------------------------------------------
 
-Situation 6: same number
+Situation 6: equal value
 
 >>> my_list2 = MyList()
->>> my_list2.append(1)
->>> my_list2.append(1)
->>> my_list2.append(1)
->>> my_list2.append(1)
+>>> my_list2.append(2)
+>>> my_list2.append(2)
+>>> my_list2.append(2)
+>>> my_list2.append(2)
 >>> my_list2.print_sorted()
-[1, 1, 1, 1]
+[2, 2, 2, 2]
 >>>
 
 -------------------------------------------
 
-Situation 7: parent object
->>> my_list = [1, 2, 3]
+Situation 7: ancestor object
+>>> my_list = [4, 5, 6]
 >>> my_list.print_sorted()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -91,28 +91,28 @@ AttributeError: 'list' object has no attribute 'print_sorted'
 
 -------------------------------------------
 
-Situation 8: negative numbers
+Situation 8: numbers with a negative value
 
 >>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
->>> my_list.append(5)
->>> my_list.append(1)
->>> my_list.append(-1)
->>> my_list.append(51)
->>> my_list.append(-5)
+>>> my_list.append(6)
+>>> my_list.append(2)
+>>> my_list.append(-2)
+>>> my_list.append(62)
+>>> my_list.append(-6)
 >>> my_list.print_sorted()
-[-5, -1, 1, 5, 51]
+[-6, -2, 2, 6, 62]
 >>>
 
 -------------------------------------------
 
-Situation 9: mixed types
+Situation 9: combined types
 
 >>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append("two")
->>> my_list.append(3.0)
->>> my_list.append("four")
+>>> my_list.append(2)
+>>> my_list.append("three")
+>>> my_list.append(4.0)
+>>> my_list.append("five")
 >>> my_list.print_sorted()
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -121,14 +121,14 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 
 -------------------------------------------
 
-Situation 10: non-numeric types
+Situation 10: non-number types
 
 >>> my_list = MyList()
->>> my_list.append("one")
->>> my_list.append("two")
->>> my_list.append("three")
+>>> my_list.append("four")
+>>> my_list.append("five")
+>>> my_list.append("six")
 >>> my_list.print_sorted()
-['one', 'three', 'two']
+['four', 'six', 'five']
 >>>
 
 -------------------------------------------
