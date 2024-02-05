@@ -2,7 +2,7 @@
 """Establishes a function that appends attributes to objects."""
 
 
-def attri_add(obj, a, va):
+def add_attribute(obj, a, va):
     """Incorporate a new attribute into an object if possible.
 
     Args:
