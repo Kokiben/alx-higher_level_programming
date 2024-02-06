@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """Class Definition for  Student."""
 
 
@@ -21,11 +21,11 @@ class Student:
         """Provide the dictionary depiction of the Student."""
         return self.__dict__
 
-    def reload_from_json(self, json):
-        """Exchange all characteristics of the Student.
-
-        Args:
-            json (dict): A dictionar containing key-value pairs to substitute student characteristics.
-        """
-        for key, value in json.items():
-            setattr(self, key, value)
+     if attrs is None:
+            return self.__dict__
+        else:
+            sult = {}
+            for ky, vaue in self.__dict__.items():
+                if ky in attrs:
+                    sult[ky] = vaue
+            return sult
