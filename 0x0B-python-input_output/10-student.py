@@ -27,5 +27,5 @@ class Student:
         Args:
             json (dict): A dictionar containing key-value pairs to substitute student characteristics.
         """
-        for g, d in json.items():
-            setattr(self, g, d)
+        for key, value in json.items():
+            setattr(self, key, value)
