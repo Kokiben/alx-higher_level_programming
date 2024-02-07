@@ -22,11 +22,11 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
-            result = {}
-            for key, value in self.__dict__.items():
+            sult = {}
+            for ky, val in self.__dict__.items():
                 if key in attrs:
-                    result[key] = value
-            return result
+                    sult[ky] = val
+            return sult
 
     def reload_from_json(self, json):
         """Exchange all characteristics of the Student.
@@ -35,5 +35,5 @@ class Student:
             json (dict): A dictionary containing key/value pairs
             to substitute student characteristics.
         """
-        for key, value in json.items():
-            setattr(self, key, value)
+        for ky, val in json.items():
+            setattr(self, ky, val)
