@@ -16,5 +16,5 @@ def append_after(filename="", search_string="", new_string=""):
             txt += lin
             if search_string in lin:
                 txt += new_string
-    with open(filename, "m") as m:
-        m.write(txt)
+    with open(filename, "w") as w:
+        w.write(txt)
