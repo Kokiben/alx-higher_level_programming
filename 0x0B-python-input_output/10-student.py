@@ -17,15 +17,15 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """Provide the dictionary depiction of the Student."""
         return self.__dict__
 
-     if attrs is None:
+      if attrs is None:
             return self.__dict__
-        else:
-            sult = {}
-            for ky, vaue in self.__dict__.items():
-                if ky in attrs:
-                    sult[ky] = vaue
-            return sult
+      else:
+            result = {}
+            for key, value in self.__dict__.items():
+                if key in attrs:
+                    result[key] = value
+            return result
