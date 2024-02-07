@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class Definition for  Student."""
+"""Class Definition for Student."""
 
 
 class Student:
@@ -19,11 +19,9 @@ class Student:
 
     def to_json(self, attrs=None):
         """Provide the dictionary depiction of the Student."""
-        return self.__dict__
-
-      if attrs is None:
+        if attrs is None:
             return self.__dict__
-      else:
+        else:
             result = {}
             for key, value in self.__dict__.items():
                 if key in attrs:
