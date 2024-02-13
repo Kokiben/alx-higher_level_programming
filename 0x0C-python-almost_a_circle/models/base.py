@@ -109,8 +109,8 @@ class Base:
         Args:
             list_objs (list): List of inherited Base instances.
         """
-        filnam = cls.__name__ + ".csv"
-        with open(filnam, "w", newline="") as csvfile:
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
             if list_objs is None or list_objs == []:
                 csvfile.write("[]")
             else:
