@@ -61,11 +61,11 @@ class Square(Rectangle):
                         self.__init__(self.size, self.a, self.b)
                     else:
                         self.id = valu
-                elif kyy == "size":
+                elif ky == "size":
                     self.size = valu
-                elif ky == "x":
+                elif ky == "a":
                     self.a = valu
-                elif ky == "y":
+                elif ky == "b":
                     self.b = valu
 
     def to_dictionary(self):
