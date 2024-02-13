@@ -71,7 +71,7 @@ class Rectangle(Base):
         """Set y paramter of rectangle."""
         return self.__y
 
-    @b.setter
+    @y.setter
     def y(self, val):
         if type(val) != int:
             raise TypeError("y must be an integer")
