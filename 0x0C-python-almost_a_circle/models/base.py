@@ -109,18 +109,18 @@ class Base:
         Args:
             list_objs (list): List of inherited Base instances.
         """
-        filename = cls.__name__ + ".csv"
-        with open(filename, "w", newline="") as csvfile:
+        filnam = cls.__name__ + ".csv"
+        with open(filnam, "w", newline="") as csvfile:
             if list_objs is None or list_objs == []:
                 csvfile.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
-                    fdnames = ["id", "width", "height", "a", "b"]
+                    fdnames = ["id", "width", "height", "x", "y"]
                 else:
-                    fdnames = ["id", "size", "a", "b"]
-                writer = csv.DictWriter(csvfile, fdnames=fdnames)
+                    fdnames = ["id", "size", "x", "y"]
+                wrter = csv.DictWrter(csvfile, fdnames=fdnames)
                 for ob in list_objs:
-                    writer.writerow(ob.to_dictionary())
+                    wrter.writerow(ob.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
@@ -163,7 +163,7 @@ class Base:
         for rectan in list_rectangles:
             trt.showturtle()
             trt.up()
-            trt.goto(rectan.a, rectan.b)
+            trt.goto(rectan.x, rectan.y)
             trt.down()
             for m in range(2):
                 trt.forward(rectan.width)
@@ -176,7 +176,7 @@ class Base:
         for squa in list_squares:
             trt.showturtle()
             trt.up()
-            trt.goto(squa.a, squa.b)
+            trt.goto(squa.x, squa.y)
             trt.down()
             for m in range(2):
                 trt.forward(squa.width)
