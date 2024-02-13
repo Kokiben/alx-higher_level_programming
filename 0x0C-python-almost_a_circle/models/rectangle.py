@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class definition for  a Rectangle."""
+"""Class definition for a Rectangle."""
 from models.base import Base
 
 
@@ -12,13 +12,13 @@ class Rectangle(Base):
         Args:
             width (int): Width of new rectangle.
             height (int): Height of new rectangle.
-            x (int): Paramter of  new rectangle.
+            x (int): Paramter of new rectangle.
             y (int): Paramter of new rectangle.
             id (int): Identity of new rectangle.
         Raises:
-            TypeError: If either of width or height is not an int.
+            TypeError: If either of width or height is not an integer.
             ValueError: If either of width or height <= 0.
-            TypeError: If either of x or y is not an int.
+            TypeError: If either of x or y is not an integer.
             ValueError: If either of x or y < 0.
         """
         self.width = width
@@ -54,8 +54,8 @@ class Rectangle(Base):
         self.__height = val
 
     @property
-    def a(self):
-        """Set a paramter of rectangle."""
+    def x(self):
+        """Set paramter of rectangle."""
         return self.__x
 
     @x.setter
@@ -68,7 +68,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Set y paramter of rectangle."""
+        """Set  paramter of rectangle."""
         return self.__y
 
     @y.setter
@@ -84,13 +84,13 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Print Rectangle using the `#` char."""
+        """Print rectangle using `#` char."""
         if self.width == 0 or self.height == 0:
             print("")
             return
 
         [print("") for y in range(self.y)]
-        for l in range(self.height):
+        for p in range(self.height):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
@@ -127,7 +127,7 @@ class Rectangle(Base):
 
         elif kwargs and len(kwargs) != 0:
             for ky, valu in kwargs.items():
-                if ky == "id":
+                if k == "id":
                     if valu is None:
                         self.__init__(self.width, self.height, self.x, self.y)
                     else:
@@ -142,7 +142,7 @@ class Rectangle(Base):
                     self.y = valu
 
     def to_dictionary(self):
-        """Return dictionary represente a rectangle."""
+        """Return dictionary represente rectangle."""
         return {
             "id": self.id,
             "width": self.width,
