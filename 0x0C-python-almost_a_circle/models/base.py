@@ -124,7 +124,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Return list of classes instante CSV fil.
+        """Return list of classes instantiated from a file of JSON str.
 
         Reads from `<cls.__name__>.csv`.
 
@@ -136,9 +136,9 @@ class Base:
         try:
             with open(filnam, "r", newline="") as csvfile:
                 if cls.__name__ == "Rectangle":
-                    fdnames = ["id", "width", "height", "a", "b"]
+                    fdnames = ["id", "width", "height", "x", "y"]
                 else:
-                    fdnames = ["id", "size", "a", "b"]
+                    fdnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fdnames=fdnames)
                 list_dicts = [dict([ky, int(valu)] for ky, valu in c.items())
                               for c in list_dicts]
