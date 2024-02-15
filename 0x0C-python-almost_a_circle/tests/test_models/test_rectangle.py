@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" test for rectangle """
+"""
+Test for the Rectangle class
+"""
 import unittest
 from models.square import Square
 from models.rectangle import Rectangle
