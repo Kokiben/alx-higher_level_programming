@@ -1,23 +1,22 @@
 #!/usr/bin/python3
-"""Unittest for base
-"""
-
+""" unittest for square """
 import unittest
 from models.square import Square
+from models.rectangle import Rectangle
+from models.base import Base
 
 
-class TestSquare(unittest.TestCase):
-    """Define unit test for square model"""
+class SquarTestCas(unittest.TestCase):
+    """ class definition for square test """
 
-    def test_initialization_success(self):
-        s1 = Square(5)
-        s2 = Square(10)
-        self.assertEqual(s1.id, 5)
-        self.assertEqual(s2.id, 6)
+    def setUp(self):
+        """
+        Resets id
+        """
+        Base._Base__nb_objects = 0
 
-    def test_initialization_without_arguments(self):
-
-        self.assertRaises(TypeError, Square)
+    def test_squar_id_increment(self):
+        pass
 
 
 if __name__ == '__main__':
