@@ -6,7 +6,7 @@ from models.rectangle import Rectangle
 from models.base import Base
 
 
-class BaseTestCase(unittest.TestCase):
+class BasTestCass(unittest.TestCase):
     """ Class definition for a base test """
     def setUp(self):
         """
@@ -14,7 +14,7 @@ class BaseTestCase(unittest.TestCase):
         """
         Base._Base__nb_objects = 0
 
-    def test_base_task1(self):
+    def test_bas_tak1(self):
         bas1 = Base()
         self.assertEqual(bas1.id, 1)
 
