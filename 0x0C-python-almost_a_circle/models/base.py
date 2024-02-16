@@ -148,11 +148,11 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Draw Rectangles and Squares using the turtle module.
+        """Draw rectangles/squares using turtle module.
 
         Args:
-            list_rectangles (list): A list of Rectangle objects to draw.
-            list_squares (list): A list of Square objects to draw.
+            list_rectangles (list): List of rectangle objects to draw.
+            list_squares (list): List of square objects to draw.
         """
         trt = turtle.Turtle()
         trt.screen.bgcolor("#b7312c")
@@ -160,28 +160,28 @@ class Base:
         trt.shape("turtle")
 
         trt.color("#ffffff")
-        for rect in list_rectangles:
+        for re in list_rectangles:
             trt.showturtle()
             trt.up()
-            trt.goto(rect.x, rect.y)
+            trt.goto(re.x, re.y)
             trt.down()
-            for i in range(2):
-                trt.forward(rect.width)
+            for k in range(2):
+                trt.forward(re.width)
                 trt.left(90)
-                trt.forward(rect.height)
+                trt.forward(re.height)
                 trt.left(90)
             trt.hideturtle()
 
         trt.color("#b5e3d8")
-        for sq in list_squares:
+        for squ in list_squares:
             trt.showturtle()
             trt.up()
-            trt.goto(sq.x, sq.y)
+            trt.goto(squ.x, squ.y)
             trt.down()
-            for i in range(2):
-                trt.forward(sq.width)
+            for k in range(2):
+                trt.forward(squ.width)
                 trt.left(90)
-                trt.forward(sq.height)
+                trt.forward(squ.height)
                 trt.left(90)
             trt.hideturtle()
 
