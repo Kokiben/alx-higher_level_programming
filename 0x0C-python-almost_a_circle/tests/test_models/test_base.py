@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" unit test for bases """
+""" unittest for bases """
 import unittest
 from models.square import Square
 from models.rectangle import Rectangle
@@ -7,7 +7,7 @@ from models.base import Base
 
 
 class BaseTestCase(unittest.TestCase):
-    """ class for base test """
+    """ Class definition for a base test """
     def setUp(self):
         """
         Resets id
