@@ -52,7 +52,7 @@ class Base:
             if list_objs is None:
                 jsonfile.write("[]")
             else:
-                list_dicts = [o.to_dictionary() for o in list_objs]
+                list_dicts = [m.to_dictionary() for m in list_objs]
                 jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
@@ -118,9 +118,9 @@ class Base:
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
                     fieldnames = ["id", "size", "x", "y"]
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                wrtr = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for ob in list_objs:
-                    writer.writerow(ob.to_dictionary())
+                    wrtr.writerow(ob.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
