@@ -98,7 +98,7 @@ class Base:
         try:
             with open(filename, "r") as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
-                return [cls.create(**d) for d in list_dicts]
+                return [cls.create(**q) for q in list_dicts]
         except IOError:
             return []
 
@@ -119,8 +119,8 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
+                for ob in list_objs:
+                    writer.writerow(ob.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
@@ -140,9 +140,9 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
-                list_dicts = [dict([k, int(v)] for k, v in d.items())
-                              for d in list_dicts]
-                return [cls.create(**d) for d in list_dicts]
+                list_dicts = [dict([ky, int(va)] for ky, va in q.items())
+                              for q in list_dicts]
+                return [cls.create(**q) for q in list_dicts]
         except IOError:
             return []
 
