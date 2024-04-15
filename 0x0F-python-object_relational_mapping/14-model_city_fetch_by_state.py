@@ -15,5 +15,5 @@ if __name__ == "__main__":
     Sitting = sessionmaker(bind=engine)
     sitting = Sitting()
     for call in (sitting.query(State.name, City.id, City.name)
-                     .filter(State.id == City.state_id)):
+                 .filter(State.id == City.state_id)):
         print(call[0] + ": (" + str(call[1]) + ") " + call[2])
