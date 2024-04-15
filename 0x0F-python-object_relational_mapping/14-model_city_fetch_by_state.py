@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" State object with name passed as argmt from database
+""" State object with name passed as argm from database
 """
 import sys
 from model_state import Base, State
@@ -15,5 +15,5 @@ if __name__ == "__main__":
     Sitting = sessionmaker(bind=engine)
     sitting = Sitting()
     for call in (sitting.query(State.name, City.id, City.name)
-                 .filter(State.id == City.state_id)):
+                     .filter(State.id == City.state_id)):
         print(call[0] + ": (" + str(call[1]) + ") " + call[2])
