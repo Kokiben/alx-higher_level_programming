@@ -6,6 +6,7 @@ from model_state import Base
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
 
+
 class City(Base):
     """
     A simple represention of a class city
