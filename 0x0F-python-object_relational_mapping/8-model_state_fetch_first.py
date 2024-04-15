@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     sitting = Sitting(engine)
-    call = sitting.query(State).order_by(State.id).call()
+    call = sitting.query(State).order_by(State.id).first()
     if call:
         print("{}: {}".format(call.id, call.name))
     else:

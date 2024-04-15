@@ -13,5 +13,5 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Sitting = sessionmaker(bind=engine)
     sitting = Sitting()
-    for call in session.query(State).order_by(State.id):
+    for call in sitting.query(State).order_by(State.id):
         print(call.id, call.name, sep=": ")
