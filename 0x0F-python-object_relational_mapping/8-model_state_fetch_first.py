@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-"""First State object from database hbtn_0e_6_usa"""
+""" prints the first State object from the database hbtn_0e_6_usa
+"""
+import sys
+from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import (create_engine)
+
 
 if __name__ == "__main__":
-
-    import sys
-    from model_state import Base, State
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import Sitting
-
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2],
-                                   sys.argv[3]), pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(engine)
-
-    sitting = Sitting(engine)
-    call = sitting.query(State).order_by(State.id).first()
-    if call:
-        print("{}: {}".format(call.id, call.name))
-    else:
+    Sitting = sessionmaker(bind=engine)
+    sitting = Sitting()
+    call = sitting.query(State).first()
+    if call is None:
         print("Nothing")
-    sitting.close()
+    else:
+        print(call.id, call.name, sep=": ")
