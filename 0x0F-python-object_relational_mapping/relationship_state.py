@@ -16,5 +16,5 @@ class State(Base):
     """
     __tablename__ = 'states'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
-    nam = Column(String(128), nullable=False)
-    cities_id = relationship("City", backref="states")
+    name = Column(String(128), nullable=False)
+    cities = relationship("City", backref="states")
