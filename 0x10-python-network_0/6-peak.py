@@ -18,6 +18,6 @@ def find_peak(list_of_integers):
     if pk > list_of_integers[M - 1] and pk > list_of_integers[M + 1]:
         return pk
     elif pk < list_of_integers[M - 1]:
-        return peak_f(list_of_integers[:M])
+        return find_peak(list_of_integers[:M])
     else:
-        return peak_f(list_of_integers[M + 1:])
+        return find_peak(list_of_integers[M + 1:])
