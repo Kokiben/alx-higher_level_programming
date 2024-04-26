@@ -2,6 +2,7 @@
 """Call https://alx-intranet.hbtn.io/status."""
 import urllib.request
 
+
 if __name__ == "__main__":
     urll = "https://alx-intranet.hbtn.io/status"
     with urllib.request.urlopen(urll) as response:
