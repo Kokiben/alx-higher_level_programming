@@ -8,11 +8,3 @@ print(find_peak([2, 2, 2]))
 print(find_peak([]))
 print(find_peak([-2, -4, 2, 1]))
 print(find_peak([4, 2, 1, 2, 2, 2, 3, 1]))
-
-guillaume@ubuntu:~/0x10$ ./6-main.py
-6
-3
-2
-None
-2
-4
