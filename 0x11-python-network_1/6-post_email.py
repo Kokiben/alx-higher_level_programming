@@ -5,8 +5,7 @@ import sys
 
 
 if __name__ == "__main__":
-    urll = sys.argv[1] # Get the URL from the command-line argument
+    urll = sys.argv[1]# Get the URL from the command-line argument
     ema = {"email": sys.argv[2]}
     rq = requests.post(urll, data=ema)
-
     print(rq.text)
