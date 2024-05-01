@@ -5,8 +5,8 @@ import sys
 
 if __name__ == "__main__":
     urll = sys.argv[1]
-    rq = requests.get(urll)
-    if (rq.status_code >= 400):
-        print(f"Error code: {req.status_code}")
+    rqt = requests.get(urll)
+    if (rqt.status_code >= 400):
+        print(f"Error code: {rqt.status_code}")
         exit()
-    print(rq.text)
+    print(rqt.text)
