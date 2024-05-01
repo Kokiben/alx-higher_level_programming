@@ -11,4 +11,4 @@ if __name__ == "__main__":
         with urllib.request.urlopen(urll) as rps: # Open the URL and read
             print(rps.read().decode('utf-8'))
     except urllib.error.HTTPError as err: # Handle HTTP errors
-        print(f"Error code: {err.code}"
+        print(f"Error code: {err.code}")
