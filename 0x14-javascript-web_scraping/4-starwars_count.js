@@ -23,6 +23,8 @@ rqt(apUrl, (err, rsps, rpsdata) => {
         console.error(err);
         return;
     }
+    
+    console.log(rsps); // Log the response object
 
     if (rsps.statusCode !== 200) {
         console.error(`Failed to retrieve data. Status code: ${rsps.statusCode}`);
