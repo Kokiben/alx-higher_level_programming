@@ -1,18 +1,12 @@
 #!/usr/bin/node
-"""reads and prints the content of a file"""
-const fls = require('fs');
 
-const filePath = process.argv[2];
+const fileSystem = require('fs');  // Renaming 'fs' to 'fileSystem'
+const filePath = process.argv[2];  // Renaming 'filename' to 'filePath'
 
-if (!filePath) {
-    console.log("Usage: node 0-readme.js <file_path>");
-    process.exit(1);
-}
-
-fls.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log(data);
+fileSystem.readFile(filePath, 'utf8', (err, data) => {  // Using 'fileSystem'
+  if (err) {
+    console.log(err);  // Using 'err' instead of 'error'
+  } else {
+    console.log(data);  // Using 'data' instead of 'content'
+  }
 });
