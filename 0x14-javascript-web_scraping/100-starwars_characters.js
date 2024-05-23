@@ -12,9 +12,9 @@ rqst(apUrl, (err, response, resbody) => {
   }
 
   const dat = JSON.parse(resbody);
-  const characters = dat.characters;
+  const character = dat.characters;
 
-  characters.forEach(characterUrl => {
+  character.forEach(characterUrl => {
     rqst(characterUrl, (charErr, charResponse, charBody) => {
       if (charErr) {
         console.error('Error fetching character:', charErr);
