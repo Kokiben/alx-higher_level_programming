@@ -11,8 +11,8 @@ rqst(apUrl, (err, response, resbody) => {
     return;
   }
 
-  const data = JSON.parse(resbody);
-  const characters = data.characters;
+  const dat = JSON.parse(resbody);
+  const characters = dat.characters;
 
   characters.forEach(characterUrl => {
     rqst(characterUrl, (charErr, charResponse, charBody) => {
