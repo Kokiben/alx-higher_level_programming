@@ -5,13 +5,13 @@ const rqst = require('request');
 const filmId = process.argv[2];
 const apUrl = `https://swapi.dev/api/films/${filmId}/`;
 
-rqst(apUrl, (err, response, body) => {
+rqst(apUrl, (err, response, resbody) => {
   if (err) {
     console.error('Error fetching film:', err);
     return;
   }
 
-  const data = JSON.parse(body);
+  const data = JSON.parse(resbody);
   const characters = data.characters;
 
   characters.forEach(characterUrl => {
@@ -21,8 +21,8 @@ rqst(apUrl, (err, response, body) => {
         return;
       }
 
-      const characterData = JSON.parse(charBody);
-      console.log(characterData.name);
+      const charInfo = JSON.parse(charBody);
+      console.log(charInfo.name);
     });
   });
 });
