@@ -1,12 +1,11 @@
 #!/usr/bin/node
+const rqst = require('request');
+const apurl = process.argv[2];
 
-const req = require('request');  // Renaming 'request' to 'req'
-const targetUrl = process.argv[2];  // Renaming 'url' to 'targetUrl'
-
-req.get(targetUrl, (err, res) => {
+rqst(apurl, (err, rsps) => {
   if (err) {
-    console.log(err);
+    console.error(err);
   } else {
-    console.log(`code: ${res.statusCode}`);
+    console.log(`code: ${rsps.statusCode}`);
   }
 });
