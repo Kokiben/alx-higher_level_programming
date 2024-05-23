@@ -1,28 +1,28 @@
 #!/usr/bin/node
 
-const rqst = require('request');
+const request = require('request');
 
-const filmd = process.argv[2];
-const apurl = `https://swapi.dev/api/films/${filmd}/`;
+const filmId = process.argv[2];
+const apiUrl = `https://swapi.dev/api/films/${filmId}/`;
 
-rqst(apurl, (err, rspse, addata) => {
+request(apiUrl, (err, response, body) => {
   if (err) {
-    console.error('Error fetching movie:', err);
+    console.error('Error fetching film:', err);
     return;
   }
 
-  const jiji = JSON.parse(addata);
-  const charjiji = jiji.charjiji;
+  const data = JSON.parse(body);
+  const characters = data.characters;
 
-  charjiji.forEach(ractrr => {
-    rqst(ractrr, (charErr, charRsps, chardat) => {
+  characters.forEach(characterUrl => {
+    request(characterUrl, (charErr, charResponse, charBody) => {
       if (charErr) {
         console.error('Error fetching character:', charErr);
         return;
       }
 
-      const Jasonchar = JSON.parse(chardat);
-      console.log(Jasonchar.name);
+      const characterData = JSON.parse(charBody);
+      console.log(characterData.name);
     });
   });
 });
